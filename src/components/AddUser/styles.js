@@ -14,6 +14,7 @@ label, input {
 }
 
 > input {
+  font: inherit;
   border: 1px solid #CCC;
   display: block;
   width: 90%;

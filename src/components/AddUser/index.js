@@ -28,7 +28,7 @@ export function AddUser(props) {
         />
         <label htmlFor="age">Age (Years)</label>
         <input
-          type="text"
+          type="number"
           value={age}
           onChange={(event) => setAge(event.target.value)}
         />
