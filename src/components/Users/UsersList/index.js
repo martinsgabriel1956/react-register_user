@@ -5,7 +5,7 @@ export function UsersList(props) {
     <CardContainer>
       <Container>
         {props.users.map((user) => (
-          <User>
+          <User key={user.id}>
             {user.name} ({user.age} years old)
           </User>
         ))}

@@ -15,10 +15,10 @@ label, input {
 
 > input {
   font: inherit;
-  border: 1px solid #CCC;
   display: block;
   width: 96%;
   padding: .15rem;
+  border: 1px solid #CCC;
 
   &:focus {
     outline: none;

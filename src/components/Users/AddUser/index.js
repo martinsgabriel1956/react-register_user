@@ -13,8 +13,7 @@ export function AddUser(props) {
     if(username.trim().length === 0 || age.trim().length === 0) return;
     if(+age < 1) return;
 
-    console.log(username, age);
-
+    props.onAddUser(username, age);
     setUsername('');
     setAge('');
   }
