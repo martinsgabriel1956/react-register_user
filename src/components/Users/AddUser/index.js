@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { FormContainer } from "./styles";
 
-import { Button } from "../UI/Button";
-import { Card } from "../UI/Card";
+import { Button } from "../../UI/Button";
+import { Card } from "../../UI/Card";
 
 export function AddUser(props) {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
 
   function handleAddUser(event) {
     event.preventDefault();
     const userData = {
-      name,
+      name: username,
       age,
     };
   }
@@ -23,8 +23,8 @@ export function AddUser(props) {
         <input
           id="username"
           type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
         />
         <label htmlFor="age">Age (Years)</label>
         <input

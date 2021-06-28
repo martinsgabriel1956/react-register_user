@@ -17,7 +17,7 @@ label, input {
   font: inherit;
   border: 1px solid #CCC;
   display: block;
-  width: 90%;
+  width: 96%;
   padding: .15rem;
 
   &:focus {
