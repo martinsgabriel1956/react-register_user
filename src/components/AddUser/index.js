@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { UserList } from "./styles";
-
-import { Container, UserField, AgeField } from "./styles";
+import { FormContainer } from "./styles";
 
 import { Button } from "../UI/Button";
+import { Card } from "../UI/Card";
 
 export function AddUser(props) {
   const [name, setName] = useState("");
@@ -18,21 +17,23 @@ export function AddUser(props) {
   }
 
   return (
-    <Container onSubmit={handleAddUser}>
-      <label htmlFor="username">Usermame</label>
-      <input
-        id="username"
-        type="text"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <label htmlFor="age">Age (Years)</label>
-      <input
-        type="text"
-        value={age}
-        onChange={(event) => setAge(event.target.value)}
-      />
-      <Button type="submit">Add User</Button>
-    </Container>
+    <Card>
+      <FormContainer onSubmit={handleAddUser}>
+        <label htmlFor="username">Usermame</label>
+        <input
+          id="username"
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <label htmlFor="age">Age (Years)</label>
+        <input
+          type="text"
+          value={age}
+          onChange={(event) => setAge(event.target.value)}
+        />
+        <Button type="submit">Add User</Button>
+      </FormContainer>
+    </Card>
   );
 }
