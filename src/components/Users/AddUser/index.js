@@ -10,10 +10,13 @@ export function AddUser(props) {
 
   function handleAddUser(event) {
     event.preventDefault();
-    const userData = {
-      name: username,
-      age,
-    };
+    if(username.trim().length === 0 || age.trim().length === 0) return;
+    if(+age < 1) return;
+
+    console.log(username, age);
+
+    setUsername('');
+    setAge('');
   }
 
   return (
