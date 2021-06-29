@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 import { FormContainer } from "./styles";
 
 import { Button } from "../../UI/Button";
 import { Card } from "../../UI/Card";
 import { ErrorModal } from "../../UI/ErrorModal";
+import { Wrapper } from "../../Helpers/Wrapper";
 
 export function AddUser(props) {
   const [username, setUsername] = useState("");
@@ -39,7 +41,7 @@ export function AddUser(props) {
   }
 
   return (
-    <div>
+    <Wrapper>
       {error && <ErrorModal title={error.title} message={error.message} onConfirm={handleError} />}
       <Card>
         <FormContainer onSubmit={handleAddUser}>
@@ -59,6 +61,6 @@ export function AddUser(props) {
           <Button type="submit">Add User</Button>
         </FormContainer>
       </Card>
-    </div>
+    </Wrapper>
   );
 }
