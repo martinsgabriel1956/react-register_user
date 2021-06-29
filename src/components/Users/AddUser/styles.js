@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
 export const FormContainer = styled.form`
   margin: .75rem auto;
   width: 40rem;
+  padding: 1rem;
 
 label {
   display: block;
@@ -13,10 +13,10 @@ label, input {
   margin-bottom: .5rem;
 }
 
-> input {
+input {
   font: inherit;
   display: block;
-  width: 96%;
+  width: 100%;
   padding: .15rem;
   border: 1px solid #CCC;
 

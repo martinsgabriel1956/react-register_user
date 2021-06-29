@@ -4,7 +4,7 @@ import { Button } from "../Button";
 
 export function ErrorModal(props) {
   return (
-    <Backdrop>
+    <Backdrop onClick={props.onConfirm}>
       <Modal>
         <Header>
           <h3>{props.title}</h3>
@@ -13,7 +13,7 @@ export function ErrorModal(props) {
           <p>{props.message}</p>
         </Content>
         <Actions>
-          <Button>Ok</Button>
+          <Button onClick={props.onConfirm}>Okay</Button>
         </Actions>
       </Modal>
     </Backdrop>

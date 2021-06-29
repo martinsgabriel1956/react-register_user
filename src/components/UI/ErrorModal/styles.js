@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Card } from "../Card";
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -11,29 +10,32 @@ export const Backdrop = styled.div`
   background: rgba(0, 0, 0, 0.75);
 `;
 
-export const Modal = styled(Card)`
+export const Modal = styled.div`
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  
   position: fixed;
   top: 30vh;
   left: 10%;
-  width: 80%;
+  width: 100%;
   z-index: 100;
   overflow: hidden;
 
   @media (min-width: 768px) {
-    & {
     left: calc(50% - 20rem);
     width: 40rem;
   }
-}
 `;
 
 export const Header = styled.header`
   background: #4f005f;
   padding: 1rem;
 
-  > h2 {
+  > h3 {
     margin: 0;
-    color: white;
+    color: #FFF;
   }
 `;
 

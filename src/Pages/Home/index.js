@@ -6,7 +6,7 @@ export function Home() {
   const [usersList, setUserList] = useState([]);
 
   function handleAddUser(uName, uAge) {
-    setUserList(prevUsersList => [...prevUsersList, {name: uName, age: uAge}]);
+    setUserList(prevUsersList => [...prevUsersList, {name: uName, age: uAge, id: Math.random().toString()}]);
   }
 
   return (
