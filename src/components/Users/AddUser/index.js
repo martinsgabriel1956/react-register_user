@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { FormContainer } from "./styles";
 
@@ -7,20 +7,23 @@ import { Card } from "../../UI/Card";
 import { ErrorModal } from "../../UI/ErrorModal";
 
 export function AddUser(props) {
-  const [username, setUsername] = useState("");
-  const [age, setAge] = useState("");
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
+
   const [error, setError] = useState("");
 
   function handleAddUser(event) {
     event.preventDefault();
-    if (username.trim().length === 0 || age.trim().length === 0) {
+    const enteredName = nameInputRef.current.value;
+    const enteredAge = ageInputRef.current.value;
+    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
         title: "Invalid Input", 
         message: "Please enter a valid name and age (nom-empty values)."
       })
       return;
     }
-    if (+age < 1) {
+    if (+enteredAge < 1) {
       setError({
         title: 'Invalid age',
         message: 'Please enter a valid age'
@@ -28,15 +31,13 @@ export function AddUser(props) {
       return;
     }
 
-    props.onAddUser(username, age);
-    setUsername("");
-    setAge("");
+    props.onAddUser(enteredName, enteredAge);
+    nameInputRef.current.value = "";
+    ageInputRef.current.value = "";
   }
 
   function handleError() {
     setError(null);
-    setUsername("");
-    setAge("");
   }
 
   return (
@@ -48,14 +49,12 @@ export function AddUser(props) {
           <input
             id="username"
             type="text"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
+            ref={nameInputRef}
+            />
           <label htmlFor="age">Age (Years)</label>
           <input
             type="number"
-            value={age}
-            onChange={(event) => setAge(event.target.value)}
+            ref={ageInputRef}
           />
           <Button type="submit">Add User</Button>
         </FormContainer>
