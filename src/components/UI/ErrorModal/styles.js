@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Backdrop = styled.div`
+export const BackdropContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -14,12 +14,8 @@ export const Modal = styled.div`
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.26);
   border-radius: 0.5rem;
-  margin-top: 2rem;
-  
   position: fixed;
   top: 30vh;
-  left: 10%;
-  width: 100%;
   z-index: 100;
   overflow: hidden;
 
